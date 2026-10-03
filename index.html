@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael James | Portfolio - Rutgers Business School</title>
+    <title>Michael James | Personal Portfolio - Rutgers Business School</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons CDN -->
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom Tailwind Theme Configuration for Rutgers Scarlet Theme -->
+    <!-- Executive Navy & Off-White Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -22,8 +22,20 @@
                         rutgers: {
                             DEFAULT: '#CC0033',
                             dark: '#990026',
-                            light: '#e60039',
+                            light: '#E60039',
                             subtle: 'rgba(204, 0, 51, 0.08)'
+                        },
+                        navy: {
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                            100: '#F1F5F9',
+                            50: '#F8FAFC'
+                        },
+                        cream: {
+                            DEFAULT: '#F5F4F0',
+                            card: '#FFFFFF',
+                            subtle: '#EAE8E1'
                         }
                     },
                     fontFamily: {
@@ -33,115 +45,103 @@
             }
         }
     </script>
-    <style>
-        .scarlet-glow {
-            box-shadow: 0 0 25px rgba(204, 0, 51, 0.15);
-        }
-    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-rutgers selection:text-white min-h-screen flex flex-col">
+<body class="bg-cream text-slate-800 font-sans antialiased selection:bg-rutgers selection:text-white min-h-screen flex flex-col">
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-900 text-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand Logo / Name -->
             <a href="#about" class="flex items-center space-x-3 group">
-                <span class="bg-rutgers text-white font-bold text-lg w-9 h-9 rounded-lg flex items-center justify-center shadow-md group-hover:bg-rutgers-light transition">MJ</span>
+                <span class="bg-rutgers text-white font-bold text-lg w-9 h-9 rounded flex items-center justify-center shadow group-hover:bg-rutgers-light transition">MJ</span>
                 <div class="flex flex-col">
-                    <span class="font-bold text-slate-100 group-hover:text-rutgers transition text-base tracking-tight">Michael James</span>
-                    <span class="text-[10px] text-slate-400 -mt-1 font-medium tracking-wide">RUTGERS BUSINESS SCHOOL</span>
+                    <span class="font-bold text-white group-hover:text-rutgers-light transition text-base tracking-tight">Michael James</span>
+                    <span class="text-[10px] text-slate-300 -mt-1 font-semibold tracking-wider">RUTGERS BUSINESS SCHOOL</span>
                 </div>
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#about" class="text-slate-300 hover:text-rutgers transition">About</a>
-                <a href="#skills" class="text-slate-300 hover:text-rutgers transition">Skills</a>
-                <a href="#projects" class="text-slate-300 hover:text-rutgers transition">Projects</a>
-                <a href="#contact" class="text-slate-300 hover:text-rutgers transition">Contact</a>
+                <a href="#about" class="text-slate-200 hover:text-white transition">About</a>
+                <a href="#skills" class="text-slate-200 hover:text-white transition">Skills</a>
+                <a href="#projects" class="text-slate-200 hover:text-white transition">Projects</a>
+                <a href="#contact" class="text-slate-200 hover:text-white transition">Contact</a>
                 
-                <!-- TOP RIGHT RESUME LINK (PDF Reference) -->
-                <a href="Michael James Resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-rutgers hover:bg-rutgers-dark text-white px-4 py-2 rounded-lg transition shadow-md hover:shadow-rutgers/30 flex items-center space-x-2">
+                <!-- Updated Resume Link -->
+                <a href="Michael James Resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-rutgers hover:bg-rutgers-dark text-white px-4 py-2 rounded transition shadow flex items-center space-x-2 font-medium">
                     <i class="fa-solid fa-file-pdf"></i>
                     <span>Resume (PDF)</span>
                 </a>
             </nav>
 
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
+            <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-slate-200 hover:text-white p-2">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Dropdown Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-3">
-            <a href="#about" class="block text-slate-300 hover:text-rutgers transition py-1">About</a>
-            <a href="#skills" class="block text-slate-300 hover:text-rutgers transition py-1">Skills</a>
-            <a href="#projects" class="block text-slate-300 hover:text-rutgers transition py-1">Projects</a>
-            <a href="#contact" class="block text-slate-300 hover:text-rutgers transition py-1">Contact</a>
-            <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="block text-center bg-rutgers hover:bg-rutgers-dark text-white py-2 rounded-lg transition mt-2">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-t border-navy-700 px-4 pt-2 pb-4 space-y-3">
+            <a href="#about" class="block text-slate-200 hover:text-white transition py-1">About</a>
+            <a href="#skills" class="block text-slate-200 hover:text-white transition py-1">Skills</a>
+            <a href="#projects" class="block text-slate-200 hover:text-white transition py-1">Projects</a>
+            <a href="#contact" class="block text-slate-200 hover:text-white transition py-1">Contact</a>
+            <!-- Updated Resume Link -->
+            <a href="Michael James Resume.pdf" target="_blank" rel="noopener noreferrer" class="block text-center bg-rutgers hover:bg-rutgers-dark text-white py-2 rounded transition mt-2 font-medium">
                 <i class="fa-solid fa-file-pdf mr-1"></i> View Resume (PDF)
             </a>
         </div>
     </header>
 
     <main class="flex-grow pt-16">
-        <!-- Hero Section & Personal Statement -->
-        <section id="about" class="relative py-16 lg:py-24 overflow-hidden flex items-center justify-center">
-            <!-- Background Decorative Lighting -->
-            <div class="absolute top-1/4 -left-20 w-72 h-72 bg-rutgers/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-10 -right-20 w-96 h-96 bg-rutgers/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Hero Section -->
+        <section id="about" class="py-16 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
                     
-                    <!-- HEADSHOT IMAGE CONTAINER (Michael_James_ID_Photo.jpeg) -->
+                    <!-- ID Photo -->
                     <div class="w-full lg:w-1/3 flex flex-col items-center">
-                        <div class="relative w-56 h-72 sm:w-64 sm:h-80 bg-slate-900 border-2 border-rutgers/40 rounded-2xl overflow-hidden shadow-2xl scarlet-glow group">
-                            <!-- JPEG Image Reference -->
+                        <div class="relative w-56 h-72 sm:w-64 sm:h-80 bg-white border border-stone-300 rounded-xl overflow-hidden shadow-lg p-2 group">
                             <img 
                                 src="Michael_James_ID_Photo.jpeg" 
                                 alt="Michael James - Headshot Photo"
-                                class="w-full h-full object-cover object-top transition duration-300 group-hover:scale-105"
+                                class="w-full h-full object-cover object-top rounded transition duration-300 group-hover:scale-105"
                                 onerror="this.onerror=null; this.src='https://placehold.co/400x500/0f172a/ffffff?text=Michael+James';"
                             />
-                            <!-- Overlay Badge -->
-                            <div class="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-center">
-                                <span class="text-xs font-semibold text-slate-200">Michael James</span>
+                            <div class="absolute bottom-4 left-4 right-4 bg-navy-900/90 text-white backdrop-blur-md px-3 py-1.5 rounded text-center">
+                                <span class="text-xs font-semibold">Michael James</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Intro Text & Personal Statement -->
+                    <!-- Introduction -->
                     <div class="w-full lg:w-2/3 text-center lg:text-left">
-                        <div class="inline-flex items-center space-x-2 bg-slate-900/90 border border-slate-800 px-4 py-2 rounded-full mb-6 shadow-inner">
-                            <span class="w-2.5 h-2.5 rounded-full bg-rutgers animate-pulse"></span>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Rutgers Business School</span>
+                        <div class="inline-flex items-center space-x-2 bg-white border border-stone-300 px-3.5 py-1.5 rounded-full mb-6 shadow-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rutgers"></span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-navy-900">Rutgers Business School</span>
                         </div>
 
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-                            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-rutgers">Michael James</span>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 tracking-tight leading-tight mb-4">
+                            Hi, I'm <span class="text-rutgers">Michael James</span>
                         </h1>
 
-                        <!-- PERSONAL STATEMENT -->
-                        <div class="my-6 border-l-4 border-rutgers pl-4 lg:pl-6 py-2 text-left bg-slate-900/50 rounded-r-xl">
-                            <p class="text-base sm:text-lg md:text-xl text-slate-200 font-medium italic leading-relaxed">
+                        <!-- Personal Statement -->
+                        <div class="my-6 border-l-4 border-rutgers pl-4 lg:pl-6 py-4 text-left bg-white rounded-r-lg border-y border-r border-stone-200 shadow-sm">
+                            <p class="text-base sm:text-lg text-slate-700 font-medium italic leading-relaxed">
                                 "Accounting Student at Rutgers Business School with a 3.8 GPA planning to graduate in 2028, using my degree and skillset to pursue a career in public accounting or financial planning and analysis."
                             </p>
                         </div>
 
-                        <!-- Action Buttons -->
                         <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8">
-                            <a href="#projects" class="bg-rutgers hover:bg-rutgers-dark text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg shadow-rutgers/20 flex items-center space-x-2 text-sm">
+                            <a href="#projects" class="bg-navy-900 hover:bg-navy-800 text-white font-semibold px-6 py-3 rounded transition shadow flex items-center space-x-2 text-sm">
                                 <span>Explore Projects</span>
                                 <i class="fa-solid fa-arrow-right text-xs"></i>
                             </a>
-                            <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-xl transition flex items-center space-x-2 text-sm">
-                                <i class="fa-solid fa-file-pdf text-rutgers"></i>
+                            <!-- Updated Resume Link -->
+                            <a href="Michael James Resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-rutgers hover:bg-rutgers-dark text-white font-semibold px-6 py-3 rounded transition shadow flex items-center space-x-2 text-sm">
+                                <i class="fa-solid fa-file-pdf"></i>
                                 <span>View Resume.pdf</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/michael-james-3b46923a8/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 px-3.5 py-3 rounded-xl transition flex items-center justify-center">
-                                <i class="fa-brands fa-linkedin text-lg text-slate-300 hover:text-white"></i>
+                            <a href="https://www.linkedin.com/in/michael-james-3b46923a8/" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-cream border border-stone-300 text-navy-900 px-4 py-3 rounded transition shadow-sm flex items-center justify-center">
+                                <i class="fa-brands fa-linkedin text-lg text-navy-900"></i>
                             </a>
                         </div>
                     </div>
@@ -151,74 +151,70 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <section id="skills" class="py-20 bg-cream-subtle/60 border-y border-stone-300/70">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-14">
                     <h2 class="text-xs uppercase font-bold tracking-widest text-rutgers mb-2">Core Competencies</h2>
-                    <h3 class="text-3xl font-bold text-white">Skills & Toolkit</h3>
+                    <h3 class="text-3xl font-bold text-navy-900">Skills & Toolkit</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <!-- Skill Box 1: Accounting & Auditing -->
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-rutgers/50 transition duration-300 flex flex-col justify-between">
+                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="w-10 h-10 bg-rutgers/10 rounded-lg flex items-center justify-center text-rutgers mb-4">
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded flex items-center justify-center mb-4">
                                 <i class="fa-solid fa-calculator text-lg"></i>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-3">Accounting & Audit</h4>
+                            <h4 class="text-base font-bold text-navy-900 mb-3">Accounting & Audit</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Financial Accounting</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Licensing & Revenue</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Royalty Audit</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Compliance</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Financial Accounting</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Licensing & Revenue</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Royalty Audit</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Compliance</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skill Box 2: Excel & Data Software -->
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-rutgers/50 transition duration-300 flex flex-col justify-between">
+                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="w-10 h-10 bg-rutgers/10 rounded-lg flex items-center justify-center text-rutgers mb-4">
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded flex items-center justify-center mb-4">
                                 <i class="fa-solid fa-file-excel text-lg"></i>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-3">Excel & Data Analysis</h4>
+                            <h4 class="text-base font-bold text-navy-900 mb-3">Excel & Data Analysis</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Advanced Excel</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Financial Modeling</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Data Tracking</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Pivot Tables</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Advanced Excel</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Financial Modeling</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Data Tracking</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Pivot Tables</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skill Box 3: Reporting & Systems -->
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-rutgers/50 transition duration-300 flex flex-col justify-between">
+                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="w-10 h-10 bg-rutgers/10 rounded-lg flex items-center justify-center text-rutgers mb-4">
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded flex items-center justify-center mb-4">
                                 <i class="fa-solid fa-chart-line text-lg"></i>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-3">Financial Reporting</h4>
+                            <h4 class="text-base font-bold text-navy-900 mb-3">Financial Reporting</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Quarterly Reports</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Monthly Analysis</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Revenue Analysis</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Quarterly Reports</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Monthly Analysis</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Revenue Analysis</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skill Box 4: Soft Skills & Business -->
-                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-rutgers/50 transition duration-300 flex flex-col justify-between">
+                    <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between">
                         <div>
-                            <div class="w-10 h-10 bg-rutgers/10 rounded-lg flex items-center justify-center text-rutgers mb-4">
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded flex items-center justify-center mb-4">
                                 <i class="fa-solid fa-user-check text-lg"></i>
                             </div>
-                            <h4 class="text-base font-bold text-white mb-3">Professional Capabilities</h4>
+                            <h4 class="text-base font-bold text-navy-900 mb-3">Professional Capabilities</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Adaptability</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Time Management</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Communication</span>
-                                <span class="bg-slate-900 border border-slate-800 text-slate-300 text-xs px-2.5 py-1 rounded-md">Teamwork</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Adaptability</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Time Management</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Communication</span>
+                                <span class="bg-navy-50 border border-slate-200 text-navy-900 text-xs px-2.5 py-1 rounded font-medium">Teamwork</span>
                             </div>
                         </div>
                     </div>
@@ -227,66 +223,59 @@
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
-        <section id="projects" class="py-20 relative">
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Header with no subtext directly below -->
                 <div class="text-center mb-12">
                     <h2 class="text-xs uppercase font-bold tracking-widest text-rutgers mb-2">Portfolio Showcase</h2>
-                    <h3 class="text-3xl font-bold text-white">Featured Projects</h3>
+                    <h3 class="text-3xl font-bold text-navy-900">Featured Projects</h3>
                 </div>
 
-                <!-- 2 Projects Grid Layout -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     
-                    <!-- PROJECT 1: Licensing Accounting Internship -->
-                    <div class="bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden hover:border-rutgers/60 transition duration-300 flex flex-col justify-between scarlet-glow">
+                    <div class="bg-white rounded-xl border border-stone-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="text-[11px] font-semibold text-rutgers bg-rutgers/10 border border-rutgers/20 px-2.5 py-0.5 rounded-full">Corporate Accounting</span>
-                                <i class="fa-solid fa-building-columns text-slate-500"></i>
+                                <span class="text-[11px] font-bold text-rutgers bg-rutgers/10 border border-rutgers/20 px-2.5 py-0.5 rounded">Corporate Accounting</span>
+                                <i class="fa-solid fa-building-columns text-slate-400"></i>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-2">Licensing Accounting Internship</h4>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                            <h4 class="text-lg font-bold text-navy-900 mb-2">Licensing Accounting Internship</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
                                 Worked in corporate accounting for the licensing department of G-III, keeping track of quarterly and monthly reports to analyze revenue and sales to ensure companies accurately report sales royalty and meet minimums stated in contractual agreements.
                             </p>
-                            <!-- Updated technology tags -->
                             <div class="flex flex-wrap gap-1.5 mb-2">
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">Excel</span>
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">Financial Reporting</span>
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">Royalty Analysis</span>
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">Compliance</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">Excel</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">Financial Reporting</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">Royalty Analysis</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">Compliance</span>
                             </div>
                         </div>
-                        <div class="px-6 py-3.5 bg-slate-950/80 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-rutgers transition flex items-center space-x-1.5">
+                        <div class="px-6 py-3.5 bg-navy-50 border-t border-stone-200 flex items-center justify-between text-xs">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-navy-900 hover:text-rutgers font-medium transition flex items-center space-x-1.5">
                                 <i class="fa-brands fa-github"></i>
                                 <span>GitHub Repository</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- PROJECT 2: KPMG Forage Certification (Links to KPMG_Forage.pdf) -->
-                    <div class="bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden hover:border-rutgers/60 transition duration-300 flex flex-col justify-between scarlet-glow">
+                    <div class="bg-white rounded-xl border border-stone-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="text-[11px] font-semibold text-rutgers bg-rutgers/10 border border-rutgers/20 px-2.5 py-0.5 rounded-full">Audit & Assurance</span>
-                                <i class="fa-solid fa-certificate text-slate-500"></i>
+                                <span class="text-[11px] font-bold text-rutgers bg-rutgers/10 border border-rutgers/20 px-2.5 py-0.5 rounded">Audit & Assurance</span>
+                                <i class="fa-solid fa-certificate text-slate-400"></i>
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-2">KPMG Forage Certification</h4>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                            <h4 class="text-lg font-bold text-navy-900 mb-2">KPMG Forage Certification</h4>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
                                 Completed the KPMG Forage Certificate learning about the work of an Auditor at KPMG. Learned about reporting and the everyday tasks and communication of an Auditor in public Accounting.
                             </p>
-                            <!-- Updated technology tags -->
                             <div class="flex flex-wrap gap-1.5 mb-2">
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">Auditing</span>
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">KPMG Virtual Experience</span>
-                                <span class="bg-slate-950 text-slate-300 text-[10px] px-2.5 py-1 rounded border border-slate-800">Financial Analysis</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">Auditing</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">KPMG Virtual Experience</span>
+                                <span class="bg-cream text-navy-900 text-[10px] font-medium px-2.5 py-1 rounded border border-stone-200">Financial Analysis</span>
                             </div>
                         </div>
-                        <!-- Link to KPMG_Forage.pdf file -->
-                        <div class="px-6 py-3.5 bg-slate-950/80 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                            <a href="KPMG_Forage.pdf" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-rutgers transition flex items-center space-x-1.5 font-medium">
+                        <div class="px-6 py-3.5 bg-navy-50 border-t border-stone-200 flex items-center justify-between text-xs">
+                            <a href="KPMG_Forage.pdf" target="_blank" rel="noopener noreferrer" class="text-navy-900 hover:text-rutgers font-semibold transition flex items-center space-x-1.5">
                                 <i class="fa-solid fa-file-pdf text-rutgers"></i>
                                 <span>View KPMG Certificate (PDF)</span>
                             </a>
@@ -298,63 +287,43 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-slate-900/40 border-t border-slate-800/80">
+        <section id="contact" class="py-20 bg-cream-subtle/50 border-t border-stone-300/70">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-xs uppercase font-bold tracking-widest text-rutgers mb-2">Connect</h2>
-                    <h3 class="text-3xl font-bold text-white">Get In Touch</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Feel free to reach out via email or LinkedIn.</p>
+                    <h3 class="text-3xl font-bold text-navy-900">Get In Touch</h3>
                 </div>
 
-                <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800 shadow-xl max-w-2xl mx-auto">
+                <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-sm max-w-2xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-                        
-                        <!-- EMAIL CARD -->
-                        <a href="mailto:mnj33@scarletmail.rutgers.edu" class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-rutgers transition flex flex-col items-center justify-center space-y-2 group">
-                            <i class="fa-solid fa-envelope text-3xl text-rutgers group-hover:scale-110 transition"></i>
-                            <span class="text-xs text-slate-400 font-medium">Rutgers Email</span>
-                            <span class="text-xs text-slate-200 font-semibold truncate w-full">mnj33@scarletmail.rutgers.edu</span>
+                        <a href="mailto:mnj33@scarletmail.rutgers.edu" class="p-5 bg-navy-50 rounded-lg border border-stone-200 hover:border-navy-900 transition flex flex-col items-center justify-center space-y-2 group">
+                            <i class="fa-solid fa-envelope text-2xl text-rutgers"></i>
+                            <span class="text-xs text-slate-500 font-medium">Rutgers Email</span>
+                            <span class="text-xs text-navy-900 font-semibold truncate w-full">mnj33@scarletmail.rutgers.edu</span>
                         </a>
 
-                        <!-- LINKEDIN CARD -->
-                        <a href="https://www.linkedin.com/in/michael-james-3b46923a8/" target="_blank" rel="noopener noreferrer" class="p-5 bg-slate-900 rounded-xl border border-slate-800 hover:border-rutgers transition flex flex-col items-center justify-center space-y-2 group">
-                            <i class="fa-brands fa-linkedin text-3xl text-rutgers group-hover:scale-110 transition"></i>
-                            <span class="text-xs text-slate-400 font-medium">LinkedIn Profile</span>
-                            <span class="text-xs text-slate-200 font-semibold">Connect on LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/michael-james-3b46923a8/" target="_blank" rel="noopener noreferrer" class="p-5 bg-navy-50 rounded-lg border border-stone-200 hover:border-navy-900 transition flex flex-col items-center justify-center space-y-2 group">
+                            <i class="fa-brands fa-linkedin text-2xl text-rutgers"></i>
+                            <span class="text-xs text-slate-500 font-medium">LinkedIn Profile</span>
+                            <span class="text-xs text-navy-900 font-semibold">Connect on LinkedIn</span>
                         </a>
-
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
+    <footer class="bg-navy-900 text-white border-t border-navy-800 py-8 text-center text-xs text-slate-400">
         <div class="max-w-6xl mx-auto px-4">
             <p>&copy; <span id="year"></span> Michael James. Rutgers Business School Portfolio Repository Assignment.</p>
         </div>
     </footer>
 
-    <!-- Interactive JavaScript -->
     <script>
-        // Set dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
     </script>
 </body>
 </html>
